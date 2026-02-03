@@ -77,39 +77,74 @@ export default function LandingPage() {
     <div className="min-h-screen bg-background">
       <Navbar variant="public" />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-sidebar py-20 sm:py-32">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] bg-card" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sidebar-border px-4 py-2 text-sm bg-[rgba(237,242,248,1)]">
-              <GraduationCap className="h-4 w-4" />
-              {"Connecting University Graduates"} 
-            </div>
-            <h1 className="text-4xl font-bold tracking-tight text-sidebar-foreground sm:text-5xl lg:text-6xl">
-              <span className="text-balance text-black">Stay Connected with your  </span>
-              <br />
-              <span className="text-primary">Alma Mater</span>
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-black">
-              UniBondz is your gateway to a thriving alumni community. Share achievements, discover opportunities, find mentors, and stay connected with your university family.
-            </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button asChild size="lg" className="w-full sm:w-auto">
-                <Link href="/register?role=alumni">
-                  Join as Alumni
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="w-full border-sidebar-border hover:bg-sidebar-accent sm:w-auto bg-transparent text-card-foreground">
-                <Link href="/register?role=student">
-                  Join as Student
-                </Link>
-              </Button>
-            </div>
-          </div>
+{/* Hero Section */}
+<section className="relative bg-white pt-2 pb-16 sm:pt-4 sm:pb-20">
+
+  {/* Rounded Hero Container */}
+  <div className="relative mx-auto max-w-[91rem] overflow-hidden rounded-3xl bg-white">
+
+    {/* Background Video */}
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="absolute inset-0 h-full w-full object-cover"
+    >
+      <source src="/hero-video.mp4" type="video/mp4" />
+    </video>
+
+    {/* Dark Gradient Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/70" />
+
+    {/* Existing Grid Pattern */}
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+
+    {/* Content */}
+    <div className="relative px-4 py-15 sm:px-6 sm:py-25 lg:px-8">
+      <div className="mx-auto max-w-3xl text-center">
+
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sidebar-border px-4 py-2 text-sm bg-white/90">
+          <GraduationCap className="h-4 w-4" />
+          {"Connecting University Graduates"}
         </div>
-      </section>
+
+        <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <span className="text-balance">Stay Connected with your</span>
+          <br />
+          <span className="text-white">Alma Mater</span>
+        </h1>
+
+        <p className="mt-6 text-lg leading-relaxed text-white/90">
+          UniBondz is your gateway to a thriving alumni community. Share achievements,
+          discover opportunities, find mentors, and stay connected with your university family.
+        </p>
+
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Button asChild size="lg" className="w-full sm:w-auto">
+            <Link href="/register?role=alumni">
+              Join as Alumni
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="w-full sm:w-auto border-white text-white hover:bg-white/10 bg-transparent"
+          >
+            <Link href="/register?role=student">
+              Join as Student
+            </Link>
+          </Button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* Stats Section */}
       <section className="border-b border-border bg-card py-12">

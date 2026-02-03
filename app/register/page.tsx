@@ -68,7 +68,7 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen bg-sidebar">
       {/* Background Pattern */}
-      <div className="fixed inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      <div className="fixed inset-0 bg-[linear-gradient(to_right,rgb(0, 0, 0)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
       <div className="relative flex min-h-screen flex-col items-center justify-center px-4 py-12 bg-slate-50">
         {/* Back Link */}
@@ -129,6 +129,24 @@ export default function RegisterPage() {
                       id="alumni-email"
                       type="email"
                       placeholder="your.email@example.com"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="alumni-phonenumber">Phone Number</Label>
+                    <Input
+                      id="alumni-phonenumber"
+                      type="phonenumber"
+                      placeholder="+94771234567"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="alumni-location">Location</Label>
+                    <Input
+                      id="alumni-location"
+                      type="location"
+                      placeholder="Galle"
                       required
                     />
                   </div>

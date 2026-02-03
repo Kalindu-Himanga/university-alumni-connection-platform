@@ -50,18 +50,25 @@ export default function AboutPage() {
       <Navbar variant="public" />
 
       {/* Hero Section */}
-      <section className="bg-sidebar py-20 sm:py-32">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-sidebar-foreground sm:text-5xl">
-              About UniBondz
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-sidebar-foreground/70">
-              A university-focused platform designed to strengthen alumni engagement by connecting graduates with their alma mater.
-            </p>
-          </div>
-        </div>
-      </section>
+<section className="relative bg-white pt-2 pb-16 sm:pt-4 sm:pb-20">
+{/* Rounded Hero Container */}
+
+<div className="relative mx-auto max-w-[91rem] overflow-hidden rounded-3xl bg-white">
+{/* Background Image */}
+<img src="/hero-image.png" alt="Hero background" className="absolute inset-0 h-full w-full object-cover" />
+
+{/* Dark Gradient Overlay */}
+
+<div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/35" />
+{/* Existing Grid Pattern */}
+
+<div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+{/* Text Content on the left side (same font size for both lines) */}
+
+<div className="absolute left-6 top-1/2 -translate-y-1/2 max-w-[40rem] px-4 sm:px-6"> {/* Use the same font size for both lines by applying the same classes */} <h1 className="text-[3rem] sm:text-[3rem] md:text-[3rem] font-extrabold tracking-tight text-white drop-shadow-md"> Stay Connected with your </h1> <h2 className="mt-0 text-[3rem] sm:text-[3rem] md:text-[3rem] font-extrabold text-white drop-shadow-md"> Alma Mater </h2> </div>
+{/* Empty spacer to control height */}
+
+<div className="relative h-[400px] sm:h-[500px] lg:h-[544px]" /> </div> </section>
 
       {/* Mission & Vision */}
       <section className="py-20">
@@ -98,20 +105,15 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              The Challenge
+              About Us
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Universities face significant challenges in maintaining alumni relationships
+              UniBondz is a digital platform created to connect students, faculty, and administrators within the university. It helps users manage profiles, stay updated on events, and communicate easily through a simple and secure system. UniBondz aims to improve campus connectivity and make university life more organized and engaging.
             </p>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              "No centralized platform for alumni interaction",
-              "Difficulty maintaining updated alumni profiles",
-              "No structured system for sharing achievements",
-              "Job opportunities are scattered and unorganized",
-              "Lack of formal mentorship systems",
-              "Manual methods for managing alumni data",
+              
             ].map((problem) => (
               <div
                 key={problem}
@@ -127,42 +129,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Solution */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Our Solution
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              UniBondz provides a comprehensive platform to address these challenges
-            </p>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              "User-friendly platform for alumni registration and profile management",
-              "Achievement sharing and professional updates",
-              "Job postings and internship opportunities for students",
-              "Mentorship module connecting alumni and students",
-              "Admin dashboard for managing events and announcements",
-              "Secure authentication and role-based access control",
-            ].map((solution) => (
-              <div
-                key={solution}
-                className="flex items-start gap-3 rounded-lg border border-border bg-card p-4"
-              >
-                <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-success/10">
-                  <span className="text-xs font-bold text-success">✓</span>
-                </div>
-                <p className="text-sm text-foreground">{solution}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Values */}
-      <section className="bg-muted py-20">
+      <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -182,44 +150,6 @@ export default function AboutPage() {
                 <p className="mt-2 text-sm text-muted-foreground">{value.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Meet Our Team
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              The dedicated students behind UniBondz
-            </p>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-            {teamMembers.map((member) => (
-              <Card key={member.regNo}>
-                <CardContent className="p-6 text-center">
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                    <GraduationCap className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-foreground text-sm">{member.name}</h3>
-                  <p className="mt-1 text-xs text-muted-foreground">{member.regNo}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <p className="text-sm text-muted-foreground">
-              Supervised by <span className="font-semibold">Ms. K.R.R. Premathilaka</span>
-            </p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Department of Information and Communication Technology
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Faculty of Technological Studies, Uva Wellassa University of Sri Lanka
-            </p>
           </div>
         </div>
       </section>
@@ -253,7 +183,7 @@ export default function AboutPage() {
       <footer className="border-t border-border bg-card py-8">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <p className="text-sm text-muted-foreground">
-            2025 UniBondz. Uva Wellassa University of Sri Lanka. ICT 321-2 Project.
+            © 2026 UniBondz. Uva Wellassa University of Sri Lanka. All rights reserved.
           </p>
         </div>
       </footer>

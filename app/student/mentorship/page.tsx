@@ -141,7 +141,7 @@ export default function StudentMentorshipPage() {
   });
 
   return (
-    <DashboardLayout role="student">
+    <DashboardLayout variant="student" userName="Nimal Fernando">
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold text-foreground">

@@ -42,7 +42,7 @@ export default function LoginPage() {
         {/* Back Link */}
         <Link
           href="/"
-          className="absolute left-4 top-4 flex items-center gap-2 text-sm text-sidebar-foreground/70 transition-colors hover:text-sidebar-foreground sm:left-8 sm:top-8"
+          className="absolute left-4 top-4 flex items-center gap-2 text-sm text-gray-700/90 transition-colors hover:text-black sm:left-8 sm:top-8"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Home

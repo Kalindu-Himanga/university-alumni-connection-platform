@@ -179,7 +179,7 @@ export default function AdminContentPage() {
   const filteredContent = flaggedContent.filter((item) => {
     const matchesSearch =
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.author.name.toLowerCase().includes(searchQuery.toLowerCase());
+      item.author?.name?.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesType =
       typeFilter === "all" ||
       item.type.toLowerCase() === typeFilter.toLowerCase();
@@ -257,7 +257,7 @@ export default function AdminContentPage() {
   };
 
   return (
-    <DashboardLayout role="admin">
+    <DashboardLayout variant="admin">
       <div className="space-y-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
@@ -435,18 +435,18 @@ export default function AdminContentPage() {
                             <div className="flex items-center gap-2">
                               <Avatar className="h-6 w-6">
                                 <AvatarImage
-                                  src={item.author.avatar || "/placeholder.svg"}
-                                  alt={item.author.name}
+                                  src={item.author?.avatar || "/placeholder.svg"}
+                                  alt={item.author?.name}
                                 />
                                 <AvatarFallback className="text-xs">
-                                  {item.author.name
-                                    .split(" ")
+                                  {item.author?.name
+                                    ?.split(" ")
                                     .map((n) => n[0])
-                                    .join("")}
+                                    .join("") || ""}
                                 </AvatarFallback>
                               </Avatar>
                               <span className="text-sm text-muted-foreground">
-                                {item.author.name}
+                                {item.author?.name}
                               </span>
                             </div>
                             <span className="text-sm text-muted-foreground">
@@ -602,20 +602,20 @@ export default function AdminContentPage() {
                 <div className="flex items-center gap-3">
                   <Avatar className="h-10 w-10">
                     <AvatarImage
-                      src={selectedContent.author.avatar || "/placeholder.svg"}
-                      alt={selectedContent.author.name}
+                      src={selectedContent.author?.avatar || "/placeholder.svg"}
+                      alt={selectedContent.author?.name}
                     />
                     <AvatarFallback>
-                      {selectedContent.author.name
-                        .split(" ")
+                      {selectedContent.author?.name
+                        ?.split(" ")
                         .map((n) => n[0])
-                        .join("")}
+                        .join("") || ""}
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="font-medium">{selectedContent.author.name}</p>
+                    <p className="font-medium">{selectedContent.author?.name}</p>
                     <p className="text-sm text-muted-foreground">
-                      {selectedContent.author.email}
+                      {selectedContent.author?.email}
                     </p>
                   </div>
                 </div>

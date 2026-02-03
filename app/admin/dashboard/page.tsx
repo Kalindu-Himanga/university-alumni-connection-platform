@@ -200,7 +200,7 @@ export default function AdminDashboardPage() {
   };
 
   return (
-    <DashboardLayout role="admin">
+    <DashboardLayout variant="admin">
       <div className="space-y-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
