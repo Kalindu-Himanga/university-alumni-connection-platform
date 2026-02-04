@@ -81,15 +81,15 @@ export default function LandingPage() {
 <section className="relative bg-white pt-2 pb-16 sm:pt-4 sm:pb-20">
 
   {/* Rounded Hero Container */}
-  <div className="relative mx-auto max-w-[91rem] overflow-hidden rounded-3xl bg-white">
+  <div className="relative mx-auto max-w-[91rem] overflow-hidden rounded-3xl bg-white aspect-video">
 
     {/* Background Video */}
-    <div className="absolute inset-0 h-full w-full">
+    <div className="absolute inset-0 h-full w-full overflow-hidden">
       <iframe
-        className="w-full h-full"
-        src="https://www.youtube.com/embed/jDWxIGD2rqg?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1"
+        className="w-full h-full border-0"
+        src="https://www.youtube.com/embed/jDWxIGD2rqg?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&playlist=jDWxIGD2rqg"
         title="University Alumni Connection Platform"
-        allow="autoplay; fullscreen"
+        allow="autoplay; fullscreen; picture-in-picture"
         allowFullScreen
       />
     </div>
