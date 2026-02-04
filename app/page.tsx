@@ -84,15 +84,15 @@ export default function LandingPage() {
   <div className="relative mx-auto max-w-[91rem] overflow-hidden rounded-3xl bg-white">
 
     {/* Background Video */}
-    <video
-      autoPlay
-      loop
-      muted
-      playsInline
-      className="absolute inset-0 h-full w-full object-cover"
-    >
-      <source src="/hero-video.mp4" type="video/mp4" />
-    </video>
+    <div className="absolute inset-0 h-full w-full">
+      <iframe
+        className="w-full h-full"
+        src="https://www.youtube.com/embed/jDWxIGD2rqg?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1"
+        title="University Alumni Connection Platform"
+        allow="autoplay; fullscreen"
+        allowFullScreen
+      />
+    </div>
 
     {/* Dark Gradient Overlay */}
     <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/70" />
